@@ -1,0 +1,22 @@
+{
+    "properties": {
+        "roleName": "GitHub Actions (No Delete)",
+        "description": "Allows reading and writing Azure resources, without permission to delete.",
+        "assignableScopes": [
+            "/subscriptions/your-subscription-id"
+        ],
+        "permissions": [
+            {
+                "actions": [
+                    "*"
+                ],
+                "notActions": [
+                    "*/Delete",
+                    "*/delete"
+                ],
+                "dataActions": [],
+                "notDataActions": []
+            }
+        ]
+    }
+}
