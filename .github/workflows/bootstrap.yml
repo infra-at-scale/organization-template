@@ -1,0 +1,51 @@
+name: Bootstrap Azure infrastructure
+
+on:
+  workflow_dispatch:
+    inputs:
+      subscription_id:
+        description: 'Azure subscription ID'
+        required: true
+      subscription_name:
+        description: 'Azure subscription name (used in folder names and naming conventions)'
+        required: true
+      resource_group_name:
+        description: 'Resource group name for state backend'
+        required: true
+      storage_account_name:
+        description: 'Storage account name for state backend'
+        required: true
+      container_name:
+        description: 'Blob container name for state backend'
+        required: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install PowerShell
+        uses: azure/powershell@v2
+        with:
+            inlineScript: |
+                ./scripts/bootstrap.ps1 `
+                    -subscription_id "${{ github.event.inputs.subscription_id }}" `
+                    -subscription_name "${{ github.event.inputs.subscription_name }}" `
+                    -resource_group_name "${{ github.event.inputs.resource_group_name }}" `
+                    -storage_account_name "${{ github.event.inputs.storage_account_name }}" `
+                    -container_name "${{ github.event.inputs.container_name }}"
+            azPSVersion: "latest"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6.1.0
+        with:
+          author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+          title: "feat: bootstrap project with user inputs"
+          commit-message: "feat: bootstrap project with user input"
+          base: main
