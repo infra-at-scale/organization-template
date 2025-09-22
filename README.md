@@ -1,5 +1,7 @@
 # organization-template
 
+[![Latest Release](https://img.shields.io/github/v/release/infra-at-scale/organization-template?label=release)](https://github.com/infra-at-scale/organization-template/releases/latest)
+
 This repository provides a **foundation layer** for Infrastructure as Code on [Microsoft Azure](https://azure.microsoft.com/) using [OpenTofu](https://opentofu.org/) and [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/).
 
 The template is designed to help you **bootstrap an Azure environment at scale** — including IAM roles and applications, resource groups, networking, Key Vaults, and DNS zones — all structured in a consistent and modular way.
