@@ -9,8 +9,8 @@ The template is designed to help you **bootstrap an Azure environment at scale**
 ## 🚫 What this is not
 
 The `organization-template` is not CAF, Azure Landing Zones, or the Landing Zone Accelerator.  
-It’s a lightweight bootstrap, not an enterprise framework.  
-See [FAQ](./doc/faq.md) for details.
+It's a lightweight bootstrap, not an enterprise framework.  
+See [FAQ](./docs/FAQ.md) for details.
 
 ## Table of contents
 
@@ -30,7 +30,17 @@ See [FAQ](./doc/faq.md) for details.
 
 ## 🚀 Getting Started
 
-You can bootstrap this repository for your own Azure environment using one of three methods:
+This repository is a **template repository**.
+
+To get started:
+
+* Create a new repository from this template using the **"Use this template"** button on GitHub.
+
+or:
+
+* Fork it and customize it to match your organization's structure and naming conventions.
+
+Then you can bootstrap this repository for your own Azure environment using one of three methods:
 
 ### GitHub Actions (Recommended)
 
@@ -113,7 +123,7 @@ The execution order follows the numeric prefix:
 
 - Lower numbers are executed first.  
 - Directories with the **same number** can be executed **in parallel**, as they have no dependencies on each other.  
-- Root modules **inside the same directory** can also be executed independently, as long as they don’t depend on each other.
+- Root modules **inside the same directory** can also be executed independently, as long as they don't depend on each other.
 
 For example:
 - `03-resourcegroups` must be applied before both `04-backupvaults` and `04-networking-nsgs`.  
