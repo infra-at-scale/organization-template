@@ -7,7 +7,7 @@ terraform {
   }
 
   required_providers {
-    azurerm = "~> 4.42.0"
+    azurerm = "~> 4.45.1"
   }
 }
 

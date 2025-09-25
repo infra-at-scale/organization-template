@@ -7,7 +7,8 @@ terraform {
   }
 
   required_providers {
-    azurerm = "~> 4.42.0"
+    azuread = "~> 3.1.0"
+    azurerm = "~> 4.45.1"
   }
 }
 
