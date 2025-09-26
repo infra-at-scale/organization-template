@@ -34,11 +34,11 @@ This repository is a **template repository**.
 
 To get started:
 
-* Create a new repository from this template using the **"Use this template"** button on GitHub.
+* Create a new repository from this template using the **[Use this template](https://github.com/new?template_name=organization-template&template_owner=infra-at-scale)** button on GitHub.
 
 or:
 
-* Fork it and customize it to match your organization's structure and naming conventions.
+* **[Fork](https://github.com/infra-at-scale/organization-template/fork)** it and customize it to match your organization's structure and naming conventions.
 
 Then you can bootstrap this repository for your own Azure environment using one of three methods:
 
