@@ -44,11 +44,17 @@ Then you can bootstrap this repository for your own Azure environment using one 
 
 ### GitHub Actions (Recommended)
 
-You can trigger the workflow directly in GitHub UI:
+You can trigger the workflow directly from the GitHub UI — no local installation or cloning required.
 
-1. Go to **Actions** tab -> **Bootstrap Azure infrastructure**
-2. Click `Run workflow`
-3. Fill in:
+
+1. **Grant GitHub Actions the necessary permissions:**
+
+   * [Read and write permissions](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#configuring-the-default-github_token-permissions)
+   * [Allow creation of pull requests](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#preventing-github-actions-from-creating-or-approving-pull-requests)
+
+2. Go to **Actions** tab -> **Bootstrap Azure infrastructure**
+3. Click `Run workflow`
+4. Fill in:
 
 * Azure subscription ID
 * Azure subscription name (used in folder names and naming conventions)
@@ -56,13 +62,15 @@ You can trigger the workflow directly in GitHub UI:
 * Storage account name for state backend
 * Blob container name for state backend
 
-4. The workflow will:
+5. The workflow will:
 
 * Replace placeholders in Terraform files
 * Rename folders to your actual subscription name
 * Open a Pull Request with the changes
 
-✅ No need to clone or install anything locally.
+> [!TIP]
+> The process is fully automated and beginner-friendly.  
+> You don't need to clone the repository or install anything locally.
 
 ---
 
